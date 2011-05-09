@@ -1,0 +1,67 @@
+<?php
+/**
+ * Configuration options for datasource for Disqus API.
+ *
+ * The minimum required to configure the datasource is the datasource option
+ * itself:
+ *
+ *     public $disqus = array(
+ *       'datasource' => 'Disqus.DisqusSource'
+ *     );
+ *
+ * You can also optionally specify public, secret key and api version, for example:
+ *
+ *     public $disqus = array(
+ *       'datasource' => 'Disqus.DisqusSource',
+ *       'public_key' => '',
+ *       'secret_key' => ''
+ *     );
+ *
+ * To specify these config parameters, you can either:
+ *
+ * 1. Add the full disqus datasource config property to your DATABASE_CONFIG
+ * class in app/config/database.php file, for example:
+ *
+ *     public $disqus = array(
+ *       'datasource' => 'Disqus.DisqusSource',
+ *       'public_key' => '',
+ *       'secret_key' => ''
+ *     );
+ *
+ * 2. Rename or copy plugins/disqus/config/disqus_config.default.php to
+ * plugins/disqus/config/disqus_config.php and specify the options in the
+ * disqus property as required. E.g.
+ *
+ *     public $disqus = array(
+ *       'datasource' => 'Disqus.DisqusSource',
+ *       'public_key' => '',
+ *       'secret_key' => ''
+ *     );
+ *
+ * 3. Add the options to the Configure singleton before the model's constructor
+ * is run, in a 'Disqus' key. For example:
+ *
+ *     // app/config/bootstrap.php
+ *     if (strpos(env('HOST_NAME'), 'localhost') !== false) {
+ *       Configure::write('Disqus', array(
+ *         'datasource' => 'Disqus.DisqusSource',
+ *         'public_key' => '',
+ *         'secret_key' => ''
+ *       ));
+ *     } else {
+ *       ... // Other settings
+ *     }
+ *
+ * @author Luboš Remplík <lubos@lubos.me>
+ * @link http://lubos.me
+ * @copyright (c) 2011 Luboš Remplík
+ * @license MIT License - http://www.opensource.org/licenses/mit-license.php
+ */
+class DISQUS_CONFIG {
+
+	var $disqus = array(
+		'datasource' => 'Disqus.DisqusSource',
+		'public_key' => '',
+		'secret_key' => ''
+	);
+}

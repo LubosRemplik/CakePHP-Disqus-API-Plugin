@@ -1,0 +1,8 @@
+<?php
+############################################################################
+# Disqus API
+############################################################################
+$config['Disqus']['developer'] = Configure::read('debug');
+$config['Disqus']['shortname'] = 'shorname';
+$config['Disqus']['public_key'] = 'public-key-here';
+$config['Disqus']['secret_key'] = 'secret-key-here';
