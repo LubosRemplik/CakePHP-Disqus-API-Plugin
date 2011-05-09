@@ -33,7 +33,7 @@ class SynchronizePostsTask extends Shell
 		$options = array('forum'=>$forum);
 		if(!$all) $options['limit'] = 100;
 		$posts = $this->DisqusPost->find('list', $options);
-		if(!$posts['code'] && !empty($posts['response'])) {
+		if(!$posts['code']) {
 			// extracts threads and assign post id
 			foreach(array_unique(Set::classicExtract($posts['response'], '{n}.thread')) as $thread_id) {
 				$thread = $this->DisqusThread->find('details', array('thread'=>$thread_id));
